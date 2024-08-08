@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Back_End.iml" filepath="$PROJECT_DIR$/Back_End.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_01/demo0708_1/demo0708_1.iml" filepath="$PROJECT_DIR$/lesson_01/demo0708_1/demo0708_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_02/demo0808_1/demo0808_1.iml" filepath="$PROJECT_DIR$/lesson_02/demo0808_1/demo0808_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_02/demo_spring_intro/demo_spring_intro.iml" filepath="$PROJECT_DIR$/lesson_02/demo_spring_intro/demo_spring_intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework/dz0708/dz0708.iml" filepath="$PROJECT_DIR$/homework/dz0708/dz0708.iml" />
+    </modules>
+  </component>
+</project>
