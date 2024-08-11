@@ -1,3 +1,4 @@
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import staff.administration.Director;
 import staff.administration.ProductionChief;
 import staff.administration.SalesChief;
@@ -8,7 +9,8 @@ import staff.production.Storekeeper;
 
 public class Main {
     public static void main(String[] args) {
-        MachineOperator machineOperator = new MachineOperator();
+
+        /*MachineOperator machineOperator = new MachineOperator();
         Storekeeper storekeeper = new Storekeeper();
         SalesManager salesManager = new SalesManager();
         Merchandiser merchandiser = new Merchandiser();
@@ -23,7 +25,12 @@ public class Main {
 
         Director director = new Director();
         director.setSalesChief(salesChief);
-        director.setProductionChief(productionChief);
+        director.setProductionChief(productionChief);*/
+
+       AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(".staff.configuration");
+       Director director = context.getBean(Director.class);
+       //Director director = (Director)context.getBean("director");
+
 
         director.manageCompany();
     }
