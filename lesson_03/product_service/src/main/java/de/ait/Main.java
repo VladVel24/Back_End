@@ -1,17 +1,13 @@
 package de.ait;
 
-import de.ait.app.controller.BookController;
+import de.ait.app.controller.ProductController;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("de.ait.app");
-        BookController controller = context.getBean(BookController.class);
+        ProductController controller = context.getBean(ProductController.class);
 
-        System.out.println(controller.getAllBooks());
-
-        System.out.println(controller.getBookById(2L));
-
-
+        System.out.println(controller.getAllProducts());
     }
 }

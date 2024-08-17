@@ -11,7 +11,7 @@ import java.util.List;
 public class BookController {
     private final BookService service;
 
-@Autowired
+    @Autowired
     public BookController(BookService service) {
         this.service = service;
     }
@@ -19,6 +19,7 @@ public class BookController {
     public List<Book> getAllBooks() {
         return service.getAllBooks();
     }
+
     public Book getBookById(Long id) {
         return service.getBookById(id);
     }

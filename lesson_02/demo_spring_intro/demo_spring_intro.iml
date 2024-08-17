@@ -17,5 +17,6 @@
         <jarDirectory url="file://$MODULE_DIR$/../../spring" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:6.1.10" level="project" />
   </component>
 </module>
