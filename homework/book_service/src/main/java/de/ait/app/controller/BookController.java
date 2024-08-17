@@ -16,6 +16,7 @@ public class BookController {
         this.service = service;
     }
 
+
     public List<Book> getAllBooks() {
         return service.getAllBooks();
     }
@@ -23,6 +24,4 @@ public class BookController {
     public Book getBookById(Long id) {
         return service.getBookById(id);
     }
-
-
 }

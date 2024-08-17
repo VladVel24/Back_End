@@ -6,24 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 @Component
 public class BookServiceImp implements BookService {
-    private final BookRepository repository;
 
-    @Autowired
-    public BookServiceImp(BookRepository repository) {
-        this.repository = repository;
+    private final BookRepository bookRepository;
+@Autowired
+    public BookServiceImp(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
+
 
     @Override
     public List<Book> getAllBooks() {
-        return repository.findAll();
+        return bookRepository.findAll();
     }
 
     @Override
     public Book getBookById(Long id) {
-        return repository.findAll()
+        return bookRepository.findAll()
                 .stream()
                 .filter(book -> book.getId().equals(id))
                 .findAny()
@@ -31,7 +31,9 @@ public class BookServiceImp implements BookService {
     }
 
     @Override
-    public Book save(Book book) {
+    public Book addBook(Book book) {
         return null;
     }
+
+
 }
