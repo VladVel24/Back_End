@@ -13,5 +13,8 @@ public interface WordCardService {
    ResponseWordCardDto saveWordCard(RequestWordCardDto dto);
    ResponseWordCardDto findWordCardById(long id);
 
-  };
+    List<ResponseWordCardDto> findByWord(String word);
+
+    List<ResponseWordCardDto> findByLanguageAndTranslateLanguage(String language, String translatelanguage);
+};
 

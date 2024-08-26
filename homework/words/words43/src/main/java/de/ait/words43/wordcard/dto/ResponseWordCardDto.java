@@ -1,7 +1,7 @@
 package de.ait.words43.wordcard.dto;
 
 
-import jdk.jfr.Name;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

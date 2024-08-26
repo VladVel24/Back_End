@@ -9,21 +9,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/wordcards")
 @AllArgsConstructor
 public class WordCardController {
     private final WordCardService service;
 
-    @GetMapping("/wordcards")
-    public List<ResponseWordCardDto> getWordCards() {
-       return service.findAllWordCards();
+    @GetMapping()
+    public List<ResponseWordCardDto> getWordCards(@RequestParam(name="word",required = false, defaultValue = "")String word) {
+        if (word.isEmpty()) {
+            return service.findAllWordCards();
+        } else {
+            return service.findByWord(word);
+        }
     }
-    @PostMapping("/wordcards")
+
+    @PostMapping()
     public ResponseWordCardDto addWordCard(@RequestBody RequestWordCardDto dto){
         return service.saveWordCard(dto);
     }
-    @GetMapping("/wordcards/{id}")
+    @GetMapping("/{id}")
     public ResponseWordCardDto getWordCard(@PathVariable Long id) {
         return service.findWordCardById(id);
 
     }
+
+    @GetMapping("/search")
+    public List<ResponseWordCardDto> findByLanguageAndTranslateLanguage(
+            @RequestParam(name="language",required = false,defaultValue = "")String language,
+            @RequestParam(name = "translatelanguage",required = false,defaultValue = "")String translatelanguage) {
+        return service.findByLanguageAndTranslateLanguage(language, translatelanguage);
+
+    }
+
 }

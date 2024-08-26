@@ -41,6 +41,21 @@ public class WordCardServiceImpl implements WordCardService {
                 .orElse(null);
     }
 
+    @Override
+    public List<ResponseWordCardDto> findByWord(String word) {
+        List<WordCard> wordCardsByWord = repository.findByWord(word);
+        return wordCardsByWord.stream()
+                .map(wordCard -> mapper.map(wordCard, ResponseWordCardDto.class))
+                .toList();
+    }
+
+    @Override
+    public List<ResponseWordCardDto> findByLanguageAndTranslateLanguage(String language, String translatelanguage) {
+        List<WordCard> byLanguageAndTranslatelanguage = repository.findByLanguageAndTranslatelanguage(language, translatelanguage);
+        return byLanguageAndTranslatelanguage.stream()
+                .map(e-> mapper.map(e, ResponseWordCardDto.class))
+                .toList();
+    }
 
 
 }

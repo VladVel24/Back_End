@@ -5,5 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface WordCardRepository extends JpaRepository<WordCard, Long> {}
+public interface WordCardRepository extends JpaRepository<WordCard, Long> {
+    List<WordCard> findByWord(String word);
+    List<WordCard> findByLanguageAndTranslatelanguage(String language, String translatelanguage);
+}
 
