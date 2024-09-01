@@ -15,6 +15,6 @@ public class RequestWordCardDto {
     private String example;
     private String translateLanguage;
     private String translation;
-    private String cardGroup;
+
 
 }

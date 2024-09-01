@@ -1,7 +1,11 @@
 package de.ait.words43.wordcard.entity;
 
+import de.ait.words43.wordgroup.entity.WordGroup;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @EqualsAndHashCode
 @ToString
@@ -15,7 +19,7 @@ import lombok.*;
 @Table(name = "wordcard")
 public class WordCard {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
     @Column(name="language")
@@ -28,6 +32,6 @@ public class WordCard {
     private String translatelanguage;
     @Column(name="translation")
     private String translation;
-    @Column(name="cardGroup")
-    private String cardGroup;
+    @ManyToMany(mappedBy = "wordCards")
+    private List<WordGroup> wordGroups = new ArrayList<>();
 }
